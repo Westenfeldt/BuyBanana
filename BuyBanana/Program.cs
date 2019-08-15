@@ -22,18 +22,28 @@ namespace BuyBanana
             Console.WriteLine("Hvor mange applensiner vil du have?");
             int antalorange = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Du vil gerne købe {0} bananer, {1} æbler og {2} applensiner.", antalBanan, antalapple, antalorange);
+            if (antalorange < 0 || antalBanan < 0 || antalapple < 0)
+            {
+                Console.WriteLine("Du kan ikke købe et negativt antal frugter");
+            }
+            else if (antalapple >= 0 || antalBanan >= 0 || antalorange >= 0)
+                {
+                    Console.WriteLine("Du vil gerne købe {0} bananer, {1} æbler og {2} applensiner.", antalBanan, antalapple, antalorange);
 
-            //Beregning
+                    //Beregning
 
-            double sum;
-            double prisBanan = 2;
-            double prisApple = 2.50;
-            double prisApplensin = 4;
+                    double sum;
+                    double prisBanan = 2;
+                    double prisApple = 2.50;
+                    double prisApplensin = 4;
 
-            sum = antalBanan * prisBanan + antalapple * prisApple + antalorange * prisApplensin;
+                    sum = antalBanan * prisBanan + antalapple * prisApple + antalorange * prisApplensin;
 
-            Console.WriteLine("Det bliver {0} kr", sum);
+                    Console.WriteLine("Det bliver {0:N2} kr", sum);
+                }
+            
+
+            
 
 
 
